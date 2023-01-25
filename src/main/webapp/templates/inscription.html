@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaCinEE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/page1.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation menu -->
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+
+<section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Inscription</h3>
+            <form method="post" class="form-horizontal">
+                <div class="form-group">
+                    <label for="nom" class="col">Nom</label>
+                    <div class="col">
+                        <input type="text" class="add" name="nom" id="nom">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="prenom" class="col">Pr&eacute;nom</label>
+                    <div class="col">
+                        <input type="text" class="add" name="prenom" id="prenom">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="mail" class="col">Mail</label>
+                    <div class="col">
+                        <input type="email" class="add" name="mail" id="mail">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="mdp" class="col">Password</label>
+                    <div class="col">
+                        <input type="password" class="add" name="mdp" id="mdp">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col">
+                        <input class="add" type="submit" value="Enregistrer">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+</body>
+</html>

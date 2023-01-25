@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EnjoyVoyage</title>
+    <link rel="stylesheet" type="text/css" href="../../css/page1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+    <div class="container" >
+                <h2 class="myclass">Enregistrer un nouvel hotel</h2>
+                <form  method="post" >
+                    <div>
+                        <label>Nom Hotel</label>
+                        <input class="add" id="nom" type="text" name="nom" placeholder="Entrer le nom">
+                    </div>
+                    <div>
+                        <label>Ville</label>
+                        <input class="add" id="ville" type="text" name="ville" placeholder="Entrer la ville">
+                    </div>
+                    <div>
+                        <label>Pays</label>
+                        <input class="add" id="pays" type="text" name="pays" placeholder="Entrer le pays">
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <textarea type="text" class="add" id="description" name="description" placeholder="Entrer une description"></textarea>
+                    </div>
+                    <div>
+                        <label>Prix</label>
+                        <input class="add" id="prix" type="number" step="0.01" name="prix" placeholder="Entrer le prix pour une nuit">
+                    </div>
+                    <div>
+                        <label>Photo</label>
+                        <input type="text" class="add" id="photo" name="photo" placeholder="Entrer une URL de photo">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Sauvegarder">
+                    <button type="reset" class="btn btn-primary">Annuler</button>
+                </form>
+    </div>
+</body>
+</html>

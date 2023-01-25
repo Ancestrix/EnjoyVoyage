@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EnjoyVoyage</title>
+    <link rel="stylesheet" type="text/css" href="css/page1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+
+<section>
+    <div class="listhotel">
+        <h3>Liste des h&ocirc;tels</h3>
+        <form action="listhotel" method="get">
+            <div>
+                <input class="recherche" placeholder="Destination: Pays, Ville" type="text" id="destination" name="destination">
+                <input class="recherche" placeholder="date de départ" type="date" id="datedepart" name="datedepart">
+                <input class="recherche" placeholder="date de retour" type="date" id="dateretour" name="dateretour">
+                <input class="recherche" placeholder="Nombre de voyager" type="number" id="nbpersonne" name="nbpersonne">
+                <input class="recherche" type="submit" value="Recherche">
+            </div>
+        </form>
+        <div class="hotel" th:each="hotel : ${hotelsList}">
+            <p class="nomhotel" th:text="${hotel.nom}"></p>
+
+            <div class="texthotel">
+                <img class="imghotel" th:src="${hotel.photo}" width="200" height="200">
+                <div>
+                    <div class="pv">
+                        <h3 th:text="${hotel.pays + ', ' + hotel.ville}"></h3>
+                    </div>
+                    <div>
+                        <p th:text="${hotel.description}"></p>
+                    </div>
+                    <div class="boutoncentrer">
+                        <a th:href="${'hotel?id='+hotel.id}" th:title="${'Details de '+hotel.nom}"><input class="bouton" type="button" value="+ Info"></a>
+                    </div>
+                </div>
+                <div class="contienprix">
+                    <p class="prix" th:text="${hotel.prix + ' &euro;'}" ></p>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</section>
+</body>
+</html>

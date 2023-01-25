@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+<header th:fragment="header(isUserConnected, userInfo)">
+    <h1>EnjoyVoyage</h1>
+    <nav>
+        <ul class="menunav" >
+            <li><a class="menunav" href="/accueil">Accueil</a></li>
+            <li><a class="menunav" href="/listhotel">Hotel</a></li>
+            <li th:if="${isUserConnected}"><a class="menunav" href="/p/reservation">Mes Destinations</a></li>
+            <li th:if="${isUserConnected}"><a href="/p/infoUser" class="menunav">Info</a></li>
+        </ul>
+        <ul class="connection" th:if="not ${isUserConnected}">
+            <li><a class="connection" href="/connexion">Se connecter</a></li>
+            <li><a class="connection" href="/inscription">S'inscrire</a></li>
+        </ul>
+        <ul class="connection" th:if="${isUserConnected}">
+            <li class="connection" th:if="${userInfo.getAdmin()}"><a href="/p/admin/ParametreAdmin" class="menunav">MenuAdmin</a></li>
+            <li><a class="connection" href="/p/deco">D&eacute;connexion</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+
+</body>
+</html>

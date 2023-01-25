@@ -1,0 +1,276 @@
+body {
+    font-family: RalewayRegular, Verdana, sans-serif;
+    margin: 0;
+
+
+}
+
+main.fontimage {
+    background-image:url("https://diapogram.com/upload/2018/04/12/20180412142602-db438182.jpg");
+    display: flex;
+
+}
+
+section {
+
+    margin: auto;
+    width: 80%;
+
+}
+
+h1, h2, h3 {
+    font-family: RalewayThin, Verdana, sans-serif;
+}
+header {
+    background-color: #1E7FCB;
+
+
+}
+
+h1 {
+    margin: 0;
+    padding: 0.3em;
+    font-weight: lighter;
+    font-size: 3em;
+    color: white;
+}
+
+header ul.menunav {
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+header h2 {
+    display: none;
+}
+
+header {
+    display: flex;
+}
+
+header  a.menunav {
+    color: white;
+    background-color: #1E7FCB;
+    margin: 1em;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 1.5em;
+
+
+    transition: all 0.5s;
+}
+
+header ul.connection {
+    list-style-type: none;
+    height: 14%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
+header a:hover.menunav {
+    color: white;
+    background-color: #007FFF;
+    transition: all 0.5s;
+}
+
+header  a.connection {
+    color: black;
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 1.5em;
+
+
+    transition: all 0.5s;
+}
+
+header a:hover.connection {
+    color: white;
+    background-color: #007FFF;
+    transition: all 0.5s;
+}
+
+main {
+    padding: 0 3%;
+    text-align: center;
+}
+
+
+section.recherche div{
+    text-align:center;
+}
+
+section.recherche {
+    background-color: rgba(220,220,220,0.5);
+    color:black;
+    padding: 8px;
+    text-align:center;
+    margin: 8em auto;
+    border-radius: 0.5em;
+}
+
+input.add  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+input[type=submit] {
+    color: black;
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 1.5em;
+}
+
+input[type=submit]:hover{
+    color: white;
+    background-color: #007FFF;
+    transition: all 0.5s;
+}
+
+.container {
+    border: 1px darkgrey solid;
+    border-radius: 10px;
+    width: 50%;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    color: black;
+    background-color: white;
+    margin: 1em;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 1.5em;
+}
+
+button:hover {
+    color: white;
+    background-color: #007FFF;
+    transition: all 0.5s;
+}
+
+input.recherche {
+    border: solid 1px gray;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.table {
+    border: 1px darkgrey solid;
+    border-radius: 10px;
+    margin: 5px ;
+    padding: 5px;
+}
+
+.hotel {
+    border: 1px darkgrey solid;
+    border-radius: 10px;
+    margin: 5px ;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: #80808033;
+}
+
+.nomhotel {
+    color: #1b07aa;
+    text-align: center;
+    font-size: 25px;
+    margin: 2px;
+}
+
+
+.imghotel {
+    border:solid 1px black;
+    margin: 10px;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.texthotel {
+    margin-top:1em;
+    position:relative;
+    display:flex;
+}
+
+div.reservation {
+    margin: 10px;
+}
+
+input.reservation {
+    border:solid 2px black;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.contienprix{
+    margin-left: auto;
+}
+
+.prix {
+    border: solid 2px #1e7fcb;
+    display: block;
+    border-radius: 1.5em;
+    background-color: #1e7fcb63;
+    text-align: center;
+    width: 100px;
+    font-size: 20px;
+    margin-left: auto;
+}
+
+.DA{
+    text-align: center;
+}
+
+section.DA h2 {
+    background-color: #eeeeee;
+    padding: 1em;
+    text-align: justify;
+    text-indent: 2em;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.DernierAjout {
+    vertical-align: middle;
+    display: inline-flex;
+}
+
+.bouton{
+    margin: 1em;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 1.5em;
+}
+
+.boutoncentrer{
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href=../../css/page1.css>
+<head>
+    <meta charset="UTF-8">
+    <title>EnjoyVoyage</title>
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+<section>
+    <h3>Modifier H&ocirc;tel</h3>
+    <div class="listhotel">
+        <form  method="post">
+            <label>Nom H&ocirc;tel:</label>
+            <input class="add" name="nom" type="text" id="nom" th:value="${hotel.nom}">
+            <label>Ville:</label>
+            <input class="add" name="ville" type="text" id="ville" th:value="${hotel.ville}">
+            <label>Pays:</label>
+            <input class="add" name="pays" type="text" id="pays" th:value="${hotel.pays}">
+            <label>Description</label>
+            <!--<textarea class="add" name="description" type="text" id="description" th:field="${hotel.description}"></textarea>-->
+            <input  class="add" name="description" type="text" id="description" th:value="${hotel.description}">
+            <label>Prix</label>
+            <input class="add" name="prix" type="number" id="prix"  step="0.01" th:value="${hotel.prix}">
+            <label>Photo</label>
+            <input class="add" name="photo" type="text" id="photo" th:value="${hotel.photo}">
+            <input type="submit" value="Sauvegarder">
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

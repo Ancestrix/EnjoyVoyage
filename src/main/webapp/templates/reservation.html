@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EnjoyVoyage</title>
+    <link rel="stylesheet" type="text/css" href="../css/page1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{../js/reservation.js}" type="application/javascript"></script>
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}">
+</header>
+<section class="DA">
+    <h2>Mes Destinations</h2>
+    <div>
+        <div class="AjoutRhotel" th:if="${isUserConnected}" th:each="hotel : ${reservationlist}">
+            <p class="prix" th:text="${hotel.prix + ' &euro;'}" ></p>
+            <p class="nomhotel" th:text="${hotel.nom}"></p>
+            <a th:href="${'/hotel?id='+hotel.id}"><img  class="imghotel" th:src="${hotel.photo}" width="200" height="200"></a>
+            <p th:text="${hotel.pays + ', ' + hotel.ville}"></p>
+            <button th:id="${hotel.id}" onclick="deleteReservation(this.id)">Supprimer</button>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link href="css/page1.css" rel="stylesheet">
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+<main>
+<div class="container">
+    <h3>Connexion</h3>
+
+    <form method="post" >
+        <input name="mail" type="email" placeholder="Email" class="add"/>
+        <br/>
+        <input name="mdp" type="password" placeholder="Password" class="add"/>
+        <br/> <br/>
+        <input type="submit" value="Connection" />
+        <br/><br/>
+    </form>
+</div>
+</main>
+
+</body>
+</html>

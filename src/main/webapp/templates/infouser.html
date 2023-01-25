@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaCinEE</title>
+	<meta charset="UTF-8">
+	  <link rel="stylesheet" href="../css/page1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  <header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+  	<section>
+		<h3>Modifier utilisateur</h3>
+		<div class="listhotel">
+				<form class="form" method="post">
+					<label>Nom</label>
+					<input name="nom" class="add" th:value="${userInfo.nom}" type="text"  id="nom" />
+					<label>Prenom</label>
+					<input name="prenom" class="add" th:value="${userInfo.prenom}" type="text"  id="prenom" />
+					<label>Email</label>
+					<input name="email" class="add" th:value="${userInfo.mail}" type="text"  id="email"/>
+					<input type="submit" value="Modifier" />
+				</form>
+		</div>
+ 	 </section>
+  </body>
+</html>

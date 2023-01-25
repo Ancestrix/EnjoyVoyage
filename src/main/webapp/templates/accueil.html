@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EnjoyVoyage</title>
+	<link rel="stylesheet" type="text/css" href="css/page1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}">
+</header>
+
+<main class="fontimage">
+	<section class="recherche" id="section-principale">
+		<h2>Trouvez des offres d'h&ocirc;tels dans le monde entier</h2>
+
+		<form action="listhotel" method="get">
+			<div>
+				<input class="recherche" placeholder="Destination: Pays, Ville" type="text" id="destination" name="destination">
+				<input class="recherche" placeholder="date de départ" type="date" id="datedepart" name="datedepart">
+				<input class="recherche" placeholder="date de retour" type="date" id="dateretour" name="dateretour">
+				<input class="recherche" placeholder="Nombre de voyager" type="number" id="nbpersonne" name="nbpersonne">
+				<input class="recherche" type="submit" value="Recherche">
+			</div>
+		</form>
+	</section>
+</main>
+<section class="DA">
+	<h2>H&ocirc;tels r&eacute;cemment ajout&eacute;s</h2>
+	<div class="DernierAjout" >
+		<div class="AjoutRhotel" th:each="hotel : ${hotelsList}">
+			<p class="nomhotel" th:text="${hotel.nom}"></p>
+			<a th:href="${'hotel?id='+hotel.id}"><img  class="imghotel" th:src="${hotel.photo}" width="200" height="200"></a>
+			<p th:text="${hotel.pays + ', ' + hotel.ville}"></p>
+		</div>
+	</div>
+</section>
+<section class="DA">
+	<h2>Nos Recommandations</h2>
+	<div class="DernierAjout" >
+		<div class="AjoutRhotel" th:each="hotel : ${RecoList}">
+			<p class="nomhotel" th:text="${hotel.nom}"></p>
+			<a th:href="${'hotel?id='+hotel.id}"><img  class="imghotel" th:src="${hotel.photo}" width="200" height="200"></a>
+			<p th:text="${hotel.pays + ', ' + hotel.ville}"></p>
+		</div>
+	</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="css/page1.css">
+<head>
+    <meta charset="UTF-8">
+    <title>EnjoyVoyage</title>
+    <script th:src="@{js/reservation.js}" type="application/javascript"></script>
+    <script th:src="@{js/Recommandation.js}" type="application/javascript"></script>
+</head>
+<body>
+<header th:replace="~{fragments :: header(${isUserConnected}, ${userInfo})}"></header>
+<section>
+    <h2 th:text="${hotel.nom}"></h2>
+    <div>
+        <p class="prix" th:text="${hotel.prix + ' &euro;'}" ></p>
+    </div>
+    <div class="texthotel">
+        <img class="imghotel" th:src="${hotel.photo}" width="200" height="200">
+        <div>
+            <div class="pv">
+                <h3 th:text="${hotel.pays + ', ' + hotel.ville}"></h3>
+            </div>
+            <div>
+                <p th:text="${hotel.description}"></p>
+            </div>
+        </div>
+    </div>
+    <div class="reservation" th:if="${isUserConnected}">
+        <button th:id="${hotel.id}" onclick="addReservation(this.id)">Ajouter dans mes destinations</button>
+        <button th:if="${userInfo.getAdmin()}" th:id="${hotel.id}" onclick="addRecommandation(this.id)">Ajouter dans Recommandation</button>
+        <a th:if="${userInfo.getAdmin()}" th:href="${'p/admin/modifhotel?id='+hotel.id}"><input class="bouton" type="button" value="Modifier"></a>
+
+    </div>
+
+</section>
+</body>
+</html>
